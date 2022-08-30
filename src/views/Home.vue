@@ -3,6 +3,7 @@
   <section id="home">
     <TheHeader />
     <TheFooter />
+    <MapLi ref="myMap" />
     <UserList :users="users" />
     <button @click="show = false">Click me</button>
     <AddUserButton @new-user="addUser" />
@@ -14,6 +15,7 @@ import TheHeader from "../components/TheHeader.vue";
 import TheFooter from "../components/TheFooter.vue";
 import UserList from "../components/UserList.vue";
 import AddUserButton from "../components/AddUserButton.vue";
+import MapLi from "../components/MapLi.vue";
 
 export default {
   components: {
@@ -21,6 +23,7 @@ export default {
     TheFooter,
     UserList,
     AddUserButton,
+    MapLi,
   },
   data() {
     return {
@@ -30,6 +33,9 @@ export default {
         { name: "Peter", age: 54, showAge: false },
       ],
     };
+  },
+  mounted() {
+    console.log(`${this.$refs.myMap.latitude} - ${this.$refs.myMap.longitude}`);
   },
 
   methods: {
