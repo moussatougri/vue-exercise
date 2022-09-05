@@ -12,3 +12,10 @@ export default {
   },
 };
 </script>
+
+<style lang="scss">
+h1 {
+  margin-top: 100px;
+  margin-left: 1em;
+}
+</style>
